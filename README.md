@@ -1,6 +1,6 @@
 # Pedal Palooza
 
-This is a hobby project that explores data analysis and visualization using Python and Streamlit. The project focuses on analyzing mock data from a sharable bicycle service called OV-Pedal. Please note that the data used in this project is entirely mock and simulated for educational purposes.
+This is a hobby project that explores data analysis and visualization using Python and Streamlit. The project focuses on analyzing mock data from a fictional sharable bicycle service called OV-Pedal. Please note that the data used in this project is entirely mock and simulated for educational purposes.
 
 ## Data Generation
 
@@ -29,7 +29,7 @@ This project uses mock data and does not represent actual data. It is designed p
 
 ## Code Generation
 
-The majority of the code, including data generation and Streamlit app setup, was generated using [ChatGPT](https://chat.openai.com/), a powerful language model developed by OpenAI. While the core logic and basic structure were written by ChatGPT, it has been reviewed, refined, and extended to create a creative, functional, and interactive data analysis project.
+Part of the code, including data generation and Streamlit app setup, was generated using [ChatGPT](https://chat.openai.com/). In addition to playing around with Streamlit, I wanted to experiment with promt writing and iterative code development with the help of a tool likr ChatGPT. 
 
 Feel free to explore, modify, and expand upon the code to learn and experiment further.
 
