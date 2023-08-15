@@ -12,6 +12,10 @@ __pycache__/
 .vscode/
 .idea/
 
+# Data files
+*.csv
+*.pkl
+
 # Compiled files
 *.exe
 *.dll
