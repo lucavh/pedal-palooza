@@ -8,9 +8,6 @@ __pycache__/
 # Streamlit cache
 .streamlit/
 
-# Data files
-data/
-
 # IDE settings (if using)
 .vscode/
 .idea/
