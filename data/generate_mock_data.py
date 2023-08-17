@@ -45,6 +45,6 @@ for location in locations:
 df = pd.DataFrame(data, columns=["timestamp", "location_name", "n_available"])
 
 # Save the DataFrame to a CSV file
-df.to_csv("./data/availability_dataset.csv", index=False)
+df.to_csv("availability_dataset.csv", index=False)
 
 logger.info("Data generation complete.")
