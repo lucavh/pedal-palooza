@@ -37,12 +37,14 @@ for location in locations:
             min(max_available, data[-1][2] + max_delta)
         ) if data else np.random.randint(min_available, max_available)
 
-        data.append((current_time, location, current_available))
+        predicted_available = current_available + np.random.randint(-5, 5)
+
+        data.append((current_time, location, current_available, predicted_available))
         
         current_time += timedelta(minutes=1)
 
 # Create a pandas DataFrame from the records
-df = pd.DataFrame(data, columns=["timestamp", "location_name", "n_available"])
+df = pd.DataFrame(data, columns=["timestamp", "location_name", "n_available", "predicted"])
 
 # Save the DataFrame to a CSV file
 df.to_csv("availability_dataset.csv", index=False)

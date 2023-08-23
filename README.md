@@ -20,7 +20,7 @@ To run the Streamlit app, follow these steps:
 
 1. Install Streamlit using `pip install streamlit`.
 2. Install the required libraries listed in `requirements.txt` using `pip install -r requirements.txt`.
-3. Run the app by executing `streamlit run scripts/app.py` in your terminal.
+3. Run the app by executing `streamlit run app/app.py` in your terminal.
 4. The app will open in your default web browser, allowing you to explore the data visualizations.
 
 ## Note on Data Authenticity
