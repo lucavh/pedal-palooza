@@ -46,6 +46,14 @@ for location in locations:
 # Create a pandas DataFrame from the records
 df = pd.DataFrame(data, columns=["timestamp", "location_name", "n_available", "predicted"])
 
+# Further preprocessing
+df["timestamp"] = pd.to_datetime(df["timestamp"])  # Convert timestamp to datetime format
+df["weekday"] = df["timestamp"].dt.day_of_week
+df["weekday_name"] = df["timestamp"].dt.day_name()
+df["is_weekend"] = df["weekday"] > 4
+df["hour"] = df["timestamp"].dt.hour
+df["week"] = df["timestamp"].dt.isocalendar().week
+
 # Save the DataFrame to a CSV file
 df.to_csv("availability_dataset.csv", index=False)
 
