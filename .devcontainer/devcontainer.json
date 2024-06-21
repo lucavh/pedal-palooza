@@ -1,0 +1,13 @@
+{
+    "name": "Pedal Palooza Dev Container",
+    "image": "mcr.microsoft.com/vscode/devcontainers/python:3.11",
+    "postCreateCommand": "pip install -r requirements.txt",
+    "postStartCommand": "chmod +x /workspaces/pedal-palooza/data/*.py",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-toolsai.jupyter"
+            ]
+        }
+    }
+}
