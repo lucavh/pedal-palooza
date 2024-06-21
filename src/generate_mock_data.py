@@ -55,6 +55,6 @@ df["hour"] = df["timestamp"].dt.hour
 df["week"] = df["timestamp"].dt.isocalendar().week
 
 # Save the DataFrame to a CSV file
-df.to_csv("availability_dataset.csv", index=False)
+df.to_csv("./data/availability_dataset.csv", index=False)
 
 logger.info("Data generation complete.")
