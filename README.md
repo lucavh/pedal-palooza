@@ -20,14 +20,14 @@ The `scripts/generate_datasets.py` script generates two dummy datasets simulatin
 To generate the datasets, follow these steps:
 
 1. If you are **not** using the Dev Container: install the required libraries listed in `requirements.txt` using `pip install -r requirements.txt`.
-2. Run the `generate_datasets.py` script: `python ./src/generate_datasets.py.
+2. Run the `generate_datasets.py` script: `python ./src/generate_mock_data.py.
 3. The datasets will be saved in the `data/` directory.
 
 ## Streamlit App
 
 This repo contains a Streamlit app to visualize the generated data. It provides interactive visualizations and insights into bike availability and rental durations across different locations.
 
-### Run the app locally 
+### Run the app locally
 
 To run the Streamlit app locally, follow these steps:
 

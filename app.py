@@ -5,6 +5,8 @@ import seaborn as sns
 from matplotlib import pyplot as plt
 import datetime
 
+import src.helper_functions as helper_functions
+
 # -- SETTINGS ------------------------------------------------------------
 
 sns.set_style("ticks")
@@ -15,8 +17,11 @@ st.set_page_config(layout="wide")
 # -- DATA ------------------------------------------------------------
 
 # Load and preprocess the generated dataset
-availability_df = pd.read_csv("./data/availability_dataset.csv")
-availability_df["timestamp"] = pd.to_datetime(availability_df["timestamp"])
+availability_df = (
+    pd.read_csv("./data/availability_dataset.csv")
+    .assign(timestamp = lambda df: pd.to_datetime(df["timestamp"]))
+    .pipe(helper_functions.compute_weighted_average)
+)
 
 # -- DASHBOARD HEADER ------------------------------------------------------------
 
@@ -123,49 +128,3 @@ fig.update_layout(
 )
 fig.update_yaxes(range=[-1, 24])
 st.plotly_chart(fig, theme="streamlit", use_container_width=True)
-
-# st.subheader("What is the typical weekly availability pattern?")
-
-# fig = px.scatter(
-#     filtered_df,
-#     x="n_available",
-#     y="hour",
-#     color="location_name",
-#     facet_col="week",
-#     opacity=0.1,
-#     labels=dict(hour="Hour", n_available="Available Bicycles", location_name="Location", week="Weeknumber"),
-# )
-# fig.update_layout(
-#     yaxis = dict(
-#         tickmode = 'linear',
-#         dtick = 2
-#     )
-# )
-# fig.update_yaxes(range=[-1, 24])
-# st.plotly_chart(fig, theme="streamlit", use_container_width=True)
-
-# st.markdown(
-#     "Some statistic like **{} records and {} columns**. And then describe the plot a bit more. For example, what the axes mean and which main patterns are visible in the plot. It's a great way to provide additional context and insights. ".format(
-#         filtered_df.shape[0], filtered_df.shape[1]
-#     )
-# )
-
-
-
-# Tabs
-# tab1, tab2 = st.tabs(["📈 Chart", "🗃 Data"])
-# tab1.subheader("A tab with a chart")
-# fig = px.scatter(
-#     filtered_df,
-#     x="n_available",
-#     y="hour",
-#     color="is_weekend"
-# )
-# fig.update_traces(
-#     marker=dict(size=8, symbol="line-ns"),
-#     selector=dict(mode="markers"),
-#     opacity=0.5,
-# )
-# tab1.plotly_chart(fig, theme="streamlit", use_container_width=True)
-# tab2.subheader("A tab with the data")
-# tab2.write(filtered_df)
